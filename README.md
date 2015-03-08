@@ -14,18 +14,12 @@ The inspiration and the partial know-how comes from [Ralf Habel](http://www.cg.t
  * animated LOD version (pre-rendered slices -> 2D texture + animation)
  * instanced trees -> rendering more than 300 trees in real-time (using 2 levels of detail - full geometry, 3x3 slices )
 
-<iframe width="425" height="344" frameborder="0"
- src="https://www.youtube.com/embed/WraiCP3gT18">
-</iframe>
- 
-<iframe width="425" height="344" frameborder="0"
- src="https://www.youtube.com/embed/eqXCpCINTzQ">
-</iframe>
- 
-<iframe width="425" height="344" frameborder="0"
- src="https://www.youtube.com/embed/HWZUVE5hgNQ">
-</iframe>
- 
-<iframe width="425" height="344" frameborder="0"
- src="https://www.youtube.com/embed/muU_hzCpfHU">
-</iframe>
+## Videos
+
+[Preview](https://www.youtube.com/embed/WraiCP3gT18)
+
+[Part 1](https://www.youtube.com/embed/eqXCpCINTzQ)
+
+[Part 2](https://www.youtube.com/embed/HWZUVE5hgNQ)
+
+[Part 3](https://www.youtube.com/embed/muU_hzCpfHU)
