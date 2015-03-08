@@ -1,0 +1,76 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Haindl et~al.(2000)Haindl, Kment,, Slavík]{sbornik}
+HAINDL, M. -- KMENT, {\'{L}}. -- SLAVíK, P.
+\newblock Virtual Information Systems.
+\newblock In \emph{WSCG'2000 --- Short communication papers}, s. 22--27.
+  University of West Bohemia, Pilsen, 2000.
+
+\bibitem[{Přispěvatelé Wikipedie}(2009{\natexlab{a}})]{wiki:framework}
+{Přispěvatelé Wikipedie}.
+\newblock \emph{Framework} [online]. 2009{\natexlab{a}}. [cit.~10.\,9.\,2009].
+\newblock Dostupn{\'{e}} z: \url{http://cs.wikipedia.org/wiki/Framework}.
+
+\bibitem[{Přispěvatelé Wikipedie}(2009{\natexlab{b}})]{wiki:orm}
+{Přispěvatelé Wikipedie}.
+\newblock \emph{Object-relational mapping} [online]. 2009{\natexlab{b}}.
+  [cit.~6.\,12.\,2009].
+\newblock Dostupn{\'{e}} z:
+  \url{http://en.wikipedia.org/wiki/Object-relational_mapping}.
+
+\bibitem[Žára et~al.(1998)Žára, Beneš,, Felkel]{kniha}
+ŽáRA, J. -- BENEš, B. -- FELKEL, P.
+\newblock \emph{Moderní počítačová grafika}.
+\newblock Computer Press s.r.o, Brno, 1st edition, 1998.
+\newblock In Czech.
+
+\bibitem[Slavík(1997)]{clanek}
+SLAVíK, P.
+\newblock Grammars and Rewriting Systems as Models for Graphical User
+  Interfaces.
+\newblock \emph{Cognitive Systems}. 1997, 4, 3/4, s.~381--399.
+
+\bibitem[web:cstug()]{CSTUG}
+web:cstug.
+\newblock {CSTUG} --- {\CS}{\TeX} {U}sers {G}roup --- hlavní stránka.
+\newblock \\ \verb|http://www.cstug.cz/|, stav z 2.\,3.\,2009.
+
+\bibitem[web:infobp()]{infobp}
+web:infobp.
+\newblock K336 {I}nfo --- pokyny pro psaní bakalářských prací.
+\newblock \\ \verb|https://info336.felk.cvut.cz/clanek.php?id=504|, stav ze
+  4.\,5.\,2009.
+
+\bibitem[web:infodp()]{infodp}
+web:infodp.
+\newblock K336 {I}nfo --- pokyny pro psaní diplomových prací.
+\newblock \\ \verb|https://info336.felk.cvut.cz/clanek.php?id=400|, stav ze
+  4.\,5.\,2009.
+
+\bibitem[web:infogs()]{www}
+web:infogs.
+\newblock Knihovna {G}rafické skupiny.
+\newblock \\ \verb|http://www.cgg.cvut.cz/Bib/library/|, stav z 30.\,8.\,2001.
+
+\bibitem[web:ipe()]{ipe}
+web:ipe.
+\newblock Grafický vektorový editor pro práce vhodný pro práci {\LaTeX}em.
+\newblock \\ \verb|http://tclab.kaist.ac.kr/ipe/|, stav z 4.\,5.\,2009.
+
+\bibitem[web:latexdocweb()]{latexdocweb}
+web:latexdocweb.
+\newblock {\LaTeX} --- online manuál.
+\newblock \\ \verb|http://www.cstug.cz/latex/lm/frames.html|, stav ze
+  4.\,5.\,2009.
+
+\bibitem[web:latexwiki()]{latexwiki}
+web:latexwiki.
+\newblock Wiki Books {\LaTeX}.
+\newblock \\ \verb|http://en.wikibooks.org/wiki/LaTeX/|, stav z 3.\,4.\,2009.
+
+\end{thebibliography}

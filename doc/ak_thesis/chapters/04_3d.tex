@@ -1,0 +1,66 @@
+\section{Zobrazení geometrického modelu}
+\label{sec-3Ddisplay}
+Vykreslování stromu v nejvyšší úrovni detailu probíhá v souladu s teorií popsanou v kapitole~\ref{chap:analyza}. Vykreslování probíhá ve 2 fázích, nejprve se vykreslí kmen a větve, poté jednotlivé listy. V každé z těchto fází je aktivní jiný shader (program řídící částečně činnost GPU).
+
+%%%
+% vetve
+%
+ Jednotlivé větve jsou zobrazovány jako kužely různých délek a průměrů. Jednotlivé vrcholy tvořící větev jsou zadané v souřadném systému příslušné větve. Dalšími atributy větvových vrcholů jsou: normála, tangenta, texturovací souřadnice, index větve v datové textuře a vektor hodnot $x$ (hierarchické souřadnice viz obr. ~\ref{fig:hierarchyCoords} ). Parametry ohybové funkce $c_2$ a $c_4$ (viz ~\ref{eq:bendFunction}) byly zafixovány na hodnotách $c_2 = 0.374570$ a $c_4 = 0.129428$, což odpovídá hodnotě parametru $\alpha = 0.2$ (viz~\ref{eq:EulerBernoulliFunction})
+ Nejdůležitější část kódu vertex shaderu je schematicky popsaná níže:
+\begin{nobreak}  
+\begin{alltt}
+\textit{// center \dots pozice stredoveho ridiciho bodu}
+\textit{// t \dots podelny vektor}
+\textit{// r \dots kolmy vektor, normala}
+\textit{// s \dots kolmy vektor, binormala}
+\textit{// x \dots hierarchicka souradnice}
+\textit{// amp \dots ridici signal animace}
+\textit{// length \dots delka vetve}
+void{\bf bend}(inout vec3 center, inout vec3 t, inout vec3 r, inout vec3 s,
+          in float x, in vec2 amp, in float length)\{
+  float fx = 0.374570*x*x + 0.129428*x*x*x*x;
+  float dx = 0.749141*x + 0.517713*x*x*x;
+  vec3 corr_r = vec3(0.0); vec3 corr_s = vec3(0.0);
+\textit{// vychylkovy prispevek smerove slozky vetru }
+  amp.x += dot(r, wind_direction) * wind_strength;
+  amp.y += dot(s, wind_direction) * wind_strength;
+\textit{// ohybova funkce }		
+  fu	= fx	 * amp;
+  fu_deriv = dx / length * amp ;
+\textit{// zamezeni deleni nulou}
+  fu_deriv = max(fu_deriv, EPSILON) + min(fu_deriv, EPSILON);
+\textit{// korekce delky}		
+  vec2 su = sqrt(vec2(1.0) + fu_deriv*fu_deriv);
+  vec2 du = fu / fu_deriv * (su - vec2(1.0));
+  corr_r = (t + r*fu_deriv.x)/su.x * du.x;
+  corr_s = (t + s*fu_deriv.y)/su.y * du.y;
+\textit{// ohnout stredovy bod a souradny system vetve}
+  center =  center + x * length * t + fu.x * r + fu.y * s - (corr_s+corr_r);		
+  t = normalize(t + r*fu_deriv.x + r*fu_deriv.y);
+  r = normalize(r - t*fu_deriv.x);
+  s = normalize(s - t*fu_deriv.y);	
+\}\end{alltt}
+\end{nobreak} 
+\pagebreak
+Následně se postupuje od úrovně 0 - tedy od kmene a provádí se ohyb pomocí popsané funkce {\bf bend}. Pro korektní ohyb je nutné deformovat (natočit) i souřadný systém následující úrovně větví. K tomu se využije skutečnosti, že báze jsou zadané v souřadném systému rodičovské větve. Stačí tedy provést triviální transformaci (br, bs, bt jsou ohnuté bázové vektory rodičovské větve):
+\begin{alltt}
+   s = s.x * br + s.y * bs + s.z * bt;
+   r = r.x * br + r.y * bs + r.z * bt;
+   t = cross( r , s );
+\end{alltt}
+Po provedení všech deformací v hierarchii získáme polohu bodu na středovém paprsku příslušné větve. Je tedy nutné ještě odsadit takový bod na povrch větve - využijeme proto vstupního atributu, který udává pozici bodu v souřadném systému větve:
+ \begin{alltt}
+  position = origin + position.x * br + position.y * bs;	
+\end{alltt}
+
+Při zobrazování listů se provede stejný postup deformací (list je spojený s větví a pohybuje se s ní), ovšem místo konečného odsazení se provede rotace souřadného systému animující pohyb listu.
+ \begin{alltt}
+  vec3 bitangent = cross( normal , tangent);
+\textit{// natocit bazovy system listu}
+  tangent = normalize ( tangent + normal * amplitude.x );
+  normal  = cross( tangent , bitangent );
+  normal  = normalize ( normal + bitangent * amplitude.y );
+  bitangent = cross ( tangent , normal );
+
+  position = origin + ( position.x * bitangent + position.y * tangent );
+\end{alltt}

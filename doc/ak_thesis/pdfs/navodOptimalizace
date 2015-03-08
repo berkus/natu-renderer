@@ -1,0 +1,9 @@
+//PREPRESS
+gswin32c.exe -sDEVICE=pdfwrite -dMaxSubsetPct=100 -dPDFSETTINGS=/prepress -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -sOutputFile="AK_thesis_print.pdf" -dNOPAUSE -dBATCH "AKucera_thesis.pdf"
+
+//EBOOK
+gswin32c.exe -sDEVICE=pdfwrite -dMaxSubsetPct=100 -dPDFSETTINGS=/ebook -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -sOutputFile="AK_thesis_ebook.pdf" -dNOPAUSE -dBATCH "AKucera_thesis.pdf"
+
+//SCREEN
+gswin32c.exe -sDEVICE=pdfwrite -dMaxSubsetPct=100 -dPDFSETTINGS=/screen -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -sOutputFile="AK_thesis_screen.pdf" -dNOPAUSE -dBATCH "AKucera_thesis.pdf"
+

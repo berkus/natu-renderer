@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleShader", "SimpleShader.vcxproj", "{99D6264A-8E6A-4F2F-B717-1C0019C8ADC5}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99D6264A-8E6A-4F2F-B717-1C0019C8ADC5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99D6264A-8E6A-4F2F-B717-1C0019C8ADC5}.Debug|Win32.Build.0 = Debug|Win32
+		{99D6264A-8E6A-4F2F-B717-1C0019C8ADC5}.Release|Win32.ActiveCfg = Release|Win32
+		{99D6264A-8E6A-4F2F-B717-1C0019C8ADC5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

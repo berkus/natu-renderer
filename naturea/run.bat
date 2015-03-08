@@ -1,0 +1,1 @@
+.\bin\release\naturea.exe 1

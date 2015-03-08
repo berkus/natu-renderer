@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="common\common.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Matrix3x3.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Matrix4x4.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\tools.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Vector3.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\Vector4.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\settings.h" />
+    <ClInclude Include="common\png.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="common\LODEpng\lodepng.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\World.h" />
+    <ClInclude Include="common\Vector2.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\globals.h" />
+    <ClInclude Include="common\timer.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\models\elephant.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\Planter.h">
+      <Filter>Scene\Vegetation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\Vegetation.h">
+      <Filter>Scene\Vegetation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\atmosphere\Fog.h">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\atmosphere\GodRays.h">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\atmosphere\Light.h">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\atmosphere\SkyBox.h">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClInclude>
+    <ClInclude Include="common\coordSystem.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="common\vertex.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\cameras\Camera.h">
+      <Filter>Scene\cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\terrain\Terrain.h">
+      <Filter>Scene\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\water\WaterSurface.h">
+      <Filter>Scene\water</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\models\LODmodel.h">
+      <Filter>Scene\models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\models\pgr2model.h">
+      <Filter>Scene\models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\models\TestModel.h">
+      <Filter>Scene\models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IO\IniSettings.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IO\ioutils.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IO\OBJTfile.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\utils.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Shader.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\ShaderManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Texture.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\TextureManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="common\akMath.h">
+      <Filter>MathUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\leaf.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\tree.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\TreeBranch.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\TreeComponent.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\TreeLeaf.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\static\Grass.h">
+      <Filter>Scene\Vegetation\static</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\static\Tree1.h">
+      <Filter>Scene\Vegetation\static</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\static\Tree2.h">
+      <Filter>Scene\Vegetation\static</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\SceneModel.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\BBox.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\Material.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\DTree.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\DTreeComponent.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\DTreeLeaf.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\DTreeBranch.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\VBO.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Mesh.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\EBO.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="common\models\cube.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Ray.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Sound.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="common\GLFW\glfw.h">
+      <Filter>includes\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="common\GLEW\glew.h">
+      <Filter>includes\GLEW</Filter>
+    </ClInclude>
+    <ClInclude Include="common\GLEW\wglew.h">
+      <Filter>includes\GLEW</Filter>
+    </ClInclude>
+    <ClInclude Include="common\GLEW\glxew.h">
+      <Filter>includes\GLEW</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod.h">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod.hpp">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod_codec.h">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod_dsp.h">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod_errors.h">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod_memoryinfo.h">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\FMOD\inc\fmod_output.h">
+      <Filter>includes\FMOD</Filter>
+    </ClInclude>
+    <ClInclude Include="common\AntTweakBar\AntTweakBar.h">
+      <Filter>includes\AntTweakBar</Filter>
+    </ClInclude>
+    <ClInclude Include="common\GL\glext.h">
+      <Filter>includes\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="common\GL\glut.h">
+      <Filter>includes\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\vegetation\dynamic\DTreePlanter.h">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{ea334075-b016-4383-a7fe-02cd27856f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{c78b8342-4a38-4985-95d3-b3528e96abb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MathUtils">
+      <UniqueIdentifier>{777a7ee6-12e3-43e9-8e85-9cec4a3e1af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IOfiles">
+      <UniqueIdentifier>{583da79f-00a7-442b-bafe-482b203a317e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{b79f5d01-3772-4efc-a3a3-8b651143d496}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Vegetation">
+      <UniqueIdentifier>{c3fcf724-e6d3-4202-8ae7-ffb42d391303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Atmosphere">
+      <UniqueIdentifier>{33a023e1-68ac-4acf-91f3-db961ad1ddb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{67ed1ef2-3475-43fd-a637-f8031de1f4e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Vegetation\static">
+      <UniqueIdentifier>{2b5f2383-b790-4e5c-863b-2927326fa0bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Vegetation\dynamic">
+      <UniqueIdentifier>{aca063c0-bd5a-4184-bd08-24319d95b08e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\cameras">
+      <UniqueIdentifier>{b638f1c7-3fd5-4768-8924-120e0f1ec84a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\water">
+      <UniqueIdentifier>{5b9c447a-2795-4c04-bcd2-b570d64d5dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\terrain">
+      <UniqueIdentifier>{90ea5820-4e9a-4076-b918-2986d1d19b60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\models">
+      <UniqueIdentifier>{792168ec-c341-489e-a8ae-6ace1d5e98c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\dynaTree">
+      <UniqueIdentifier>{a9f1721a-178e-4a8d-bf21-8676ee18857c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA">
+      <UniqueIdentifier>{1e15f731-b2ce-4fef-9ceb-a7da572c68d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA\models">
+      <UniqueIdentifier>{77e7a1fd-2a91-4423-85cc-37ba1e92c73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA\textures">
+      <UniqueIdentifier>{5a99edea-6264-4a11-8306-a7bee9c1dbab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_binaries">
+      <UniqueIdentifier>{391f5d9e-345b-4731-b8cf-cffe27ca35f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\dynaTree\debug">
+      <UniqueIdentifier>{d7865f9b-a469-4f44-becc-aaaf15af78d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DATA\sounds">
+      <UniqueIdentifier>{e9aa435e-10b6-4193-bd30-6389cb4671b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\dynaTree\forShadow">
+      <UniqueIdentifier>{0f04a265-b092-4de8-829c-68e9e360e17e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes">
+      <UniqueIdentifier>{4e773305-477a-4456-9a4d-a809c56354e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\GLFW">
+      <UniqueIdentifier>{e5116ff5-a787-416c-9c8e-ad7df8682a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\GLEW">
+      <UniqueIdentifier>{7ff48516-d381-4247-a9dd-77b9a29c8b02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\FMOD">
+      <UniqueIdentifier>{acce5af2-2d7f-49c4-9679-5fb730c6b841}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\AntTweakBar">
+      <UniqueIdentifier>{b286add0-d0e5-4ade-a1c2-e6ae30fe3050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\GL">
+      <UniqueIdentifier>{50a845e0-bee7-49d3-a691-493d96093081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\msTexture">
+      <UniqueIdentifier>{2b351b1b-78fe-4991-8be4-e38883ff7f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\dynaTree\prepareLOD">
+      <UniqueIdentifier>{f01fc0ef-1520-4605-9d56-5b46956d6a5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\dynaTree\LOD">
+      <UniqueIdentifier>{2740d746-3ddc-414b-83e9-15bd2ae4d8f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="common\png.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="common\LODEpng\lodepng.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World.cpp" />
+    <ClCompile Include="common\timer.cpp">
+      <Filter>MathUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\Planter.cpp">
+      <Filter>Scene\Vegetation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\Vegetation.cpp">
+      <Filter>Scene\Vegetation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\atmosphere\Fog.cpp">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\atmosphere\GodRays.cpp">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\atmosphere\Light.cpp">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\atmosphere\SkyBox.cpp">
+      <Filter>Scene\Atmosphere</Filter>
+    </ClCompile>
+    <ClCompile Include="common\coordSystem.cpp">
+      <Filter>MathUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="common\vertex.cpp">
+      <Filter>MathUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\cameras\Camera.cpp">
+      <Filter>Scene\cameras</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\terrain\Terrain.cpp">
+      <Filter>Scene\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\water\WaterSurface.cpp">
+      <Filter>Scene\water</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\models\LODmodel.cpp">
+      <Filter>Scene\models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\models\pgr2model.cpp">
+      <Filter>Scene\models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\models\TestModel.cpp">
+      <Filter>Scene\models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IO\IniSettings.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IO\ioutils.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IO\OBJTfile.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\Shader.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\ShaderManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\Texture.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\TextureManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\tree.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\TreeBranch.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\TreeComponent.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\TreeLeaf.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\static\Grass.cpp">
+      <Filter>Scene\Vegetation\static</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\static\Tree1.cpp">
+      <Filter>Scene\Vegetation\static</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\static\Tree2.cpp">
+      <Filter>Scene\Vegetation\static</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\SceneModel.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\BBox.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\Material.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\DTree.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\DTreeComponent.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\DTreeLeaf.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\DTreeBranch.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\VBO.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\Mesh.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\EBO.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\Ray.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility\Sound.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\vegetation\dynamic\DTreePlanter.cpp">
+      <Filter>Scene\Vegetation\dynamic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\terrain\terrain_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\terrain\terrain_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\grass\grass_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\grass\grass_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\water\water_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\water\water_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\tree\tree_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\tree\tree_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\godrays\godrays_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\godrays\godrays_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\skybox\skybox_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\skybox\skybox_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\models\parallax_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\models\parallax_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\models\phong_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\models\phong_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\models\phong_fs_s.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\models\phong_vs_s.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\cube_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\cube_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\branch_fs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\leaf_fs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\leaf_vs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="models\OBJT\Javor.objt">
+      <Filter>DATA\models</Filter>
+    </None>
+    <None Include="models\OBJT\JavorListy.objt">
+      <Filter>DATA\models</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\bark_moss_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\bark_moss_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\bark_moss_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\bark2_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\bark2_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\bark2_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\falloff.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\falloff_vertexcolor.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\gamma02.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\gamma03.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\gamma04.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\gamma05.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\grass_blades.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\grass_ground.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\grass_noise.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\grassblade_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\grassblade_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_contributions.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_dirt_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_dirt_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_dirt_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_grass_decal - Copy.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_grass_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_grass_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_grass_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_modulate.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_mossy_dirt_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_mossy_dirt_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_mossy_dirt_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_rocky_dirt_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_rocky_dirt_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_rocky_dirt_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_sandy_decal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_sandy_height.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\ground_sandy_normal.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_decal_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_decal_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_halflife2_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_halflife2_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_normal_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_normal_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_translucency_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\leaf3_translucency_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\lightshafts_falloff.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\Noise_20.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\Noise_53.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\Noise_harm.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\Noise_harmswing05.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\noise_leaves.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\noise_wood.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\noise_wood_old.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\shadow_gradient.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\sky_gradient_0.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\sky_gradient_45.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\habel\sky_sun.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\preprocess_fs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\preprocess_vs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\branch_vs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_branch_fs.glsl">
+      <Filter>Shaders\dynaTree\prepareLOD</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_branch_vs.glsl">
+      <Filter>Shaders\dynaTree\prepareLOD</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_leaf_fs.glsl">
+      <Filter>Shaders\dynaTree\prepareLOD</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_leaf_vs.glsl">
+      <Filter>Shaders\dynaTree\prepareLOD</Filter>
+    </None>
+    <None Include="run.bat">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="bin\release\AntTweakBar.dll">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="bin\release\glew32.dll">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="bin\release\glut32.dll">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="bin\release\naturea.exe">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="bin\release\naturea.pdb">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\join_fs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\join_vs.glsl">
+      <Filter>Shaders\dynaTree</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\n_branch_gs.glsl">
+      <Filter>Shaders\dynaTree\debug</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\n_branch_fs.glsl">
+      <Filter>Shaders\dynaTree\debug</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\n_branch_vs.glsl">
+      <Filter>Shaders\dynaTree\debug</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\n_leaf_fs.glsl">
+      <Filter>Shaders\dynaTree\debug</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\n_leaf_gs.glsl">
+      <Filter>Shaders\dynaTree\debug</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\n_leaf_vs.glsl">
+      <Filter>Shaders\dynaTree\debug</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_decal_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_decal_back.psd">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_decal_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_decal_front.psd">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_halflife2_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_halflife2_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_normal_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_normal_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_translucency_back.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_translucency_back.psd">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_translucency_front.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\leaf3_translucency_front.psd">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\seasonMap.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="textures\dynamic_tree\seasonMap2.png">
+      <Filter>DATA\textures</Filter>
+    </None>
+    <None Include="media\background.mp3">
+      <Filter>DATA\sounds</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\shadow\branch_shadow_fs.glsl">
+      <Filter>Shaders\dynaTree\forShadow</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\shadow\branch_shadow_vs.glsl">
+      <Filter>Shaders\dynaTree\forShadow</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\shadow\leaf_shadow_fs.glsl">
+      <Filter>Shaders\dynaTree\forShadow</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\shadow\leaf_shadow_vs.glsl">
+      <Filter>Shaders\dynaTree\forShadow</Filter>
+    </None>
+    <None Include="shaders\sun_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\sun_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="bin\release\fmodex.dll">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="bin\release\fmodexL.dll">
+      <Filter>_binaries</Filter>
+    </None>
+    <None Include="common\GLEW\glew32.dll">
+      <Filter>includes\GLEW</Filter>
+    </None>
+    <None Include="common\FMOD\lib\libfmodex.a">
+      <Filter>includes\FMOD</Filter>
+    </None>
+    <None Include="common\FMOD\lib\libfmodexL.a">
+      <Filter>includes\FMOD</Filter>
+    </None>
+    <None Include="common\FMOD\lib\which library do I use.txt">
+      <Filter>includes\FMOD</Filter>
+    </None>
+    <None Include="common\GL\glut32.dll">
+      <Filter>includes\GL</Filter>
+    </None>
+    <None Include="shaders\MStexture\ms_fs.glsl">
+      <Filter>Shaders\msTexture</Filter>
+    </None>
+    <None Include="shaders\MStexture\ms_vs.glsl">
+      <Filter>Shaders\msTexture</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_fs.glsl">
+      <Filter>Shaders\dynaTree\LOD</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_vs.glsl">
+      <Filter>Shaders\dynaTree\LOD</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_shadow_fs.glsl">
+      <Filter>Shaders\dynaTree\LOD</Filter>
+    </None>
+    <None Include="shaders\dynamic_tree\lod_shadow_vs.glsl">
+      <Filter>Shaders\dynaTree\LOD</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="common\GLFW\msvc10\GLFW.lib">
+      <Filter>includes\GLFW</Filter>
+    </Library>
+    <Library Include="common\GLEW\glew32.lib">
+      <Filter>includes\GLEW</Filter>
+    </Library>
+    <Library Include="common\GLEW\glew32s.lib">
+      <Filter>includes\GLEW</Filter>
+    </Library>
+    <Library Include="common\FMOD\lib\fmodex_vc.lib">
+      <Filter>includes\FMOD</Filter>
+    </Library>
+    <Library Include="common\FMOD\lib\fmodexL_vc.lib">
+      <Filter>includes\FMOD</Filter>
+    </Library>
+    <Library Include="common\AntTweakBar\AntTweakBar.lib">
+      <Filter>includes\AntTweakBar</Filter>
+    </Library>
+    <Library Include="common\GL\glut32.lib">
+      <Filter>includes\GL</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

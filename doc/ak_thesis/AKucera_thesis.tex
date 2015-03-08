@@ -1,0 +1,392 @@
+%% History:
+% Pavel Tvrdik (26.12.2004)
+%  + initial version for PhD Report
+%
+% Daniel Sykora (27.01.2005)
+%
+% Michal Valenta (3.12.2008)
+% rada zmen ve formatovani (diky M. Duškovi, J. Holubovi a J. Žďárkovi)
+% sjednoceni zdrojoveho kodu pro anglickou, ceskou, bakalarskou a diplomovou praci
+
+% One-page layout: (proof-)reading on display
+%%%% \documentclass[11pt,oneside,a4paper]{book}
+% Two-page layout: final printing
+\documentclass[11pt,twoside,a4paper]{book}   
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% The user of this template may find useful to have an alternative to these 
+% officially suggested packages:
+\usepackage{verbatim}
+\usepackage{dirtree}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{alltt}
+\newcolumntype{T}{>{\vtop\bgroup\vspace*{-\ht\strutbox}\hbox\bgroup}c<{\egroup\egroup}}
+\newcolumntype{M}{>{$\vcenter\bgroup\hbox\bgroup}c<{\egroup\egroup$}}
+
+\usepackage{moreverb}
+\usepackage{amsmath, amsthm, amssymb, textcomp}
+\usepackage[czech, english]{babel}
+\usepackage[T1]{fontenc} % pouzije EC fonty 
+% pripadne pisete-li cesky, pak lze zkusit take:
+% \usepackage[OT1]{fontenc} 
+\usepackage[utf8]{inputenc}
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% In case of problems with PDF fonts, one may try to uncomment this line:
+%\usepackage{lmodern}
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% Depending on your particular TeX distribution and version of conversion tools 
+% (dvips/dvipdf/ps2pdf), some (advanced | desperate) users may prefer to use 
+% different settings.
+% Please uncomment the following style and use your CSLaTeX (cslatex/pdfcslatex) 
+% to process your work. Note however, this file is in UTF-8 and a conversion to 
+% your native encoding may be required. Some settings below depend on babel 
+% macros and should also be modified. See \selectlanguage \iflanguage.
+%\usepackage{czech}  %%%%%\usepackage[T1]{czech} %%%%[IL2] [T1] [OT1]
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Styles required in your work follow %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+%\usepackage{indentfirst} %1. odstavec jako v cestine.
+
+\usepackage{k336_thesis_macros} % specialni makra pro formatovani DP a BP
+ % muzete si vytvorit i sva vlastni v souboru k336_thesis_macros.sty
+ % najdete  radu jednoduchych definic, ktere zde ani nejsou pouzity
+ % napriklad: 
+ % \newcommand{\bfig}{\begin{figure}\begin{center}}
+ % \newcommand{\efig}{\end{center}\end{figure}}
+ % umoznuje pouzit prikaz \bfig namisto \begin{figure}\begin{center} atd.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\TypeOfWork{Diplomová práce} \typeout{Diplomova prace}
+% \newcommand\TypeOfWork{Master's Thesis}   \typeout{Master's Thesis} 
+% \newcommand\TypeOfWork{Bakalářská práce}  \typeout{Bakalarska prace}
+% \newcommand\TypeOfWork{Bachelor's Project}  \typeout{Bachelor's Project}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% nabidky jsou z: http://www.fel.cvut.cz/cz/education/bk/prehled.html
+
+%\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Bakalářský}
+%\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Magisterský}
+% \newcommand\StudProgram{Elektrotechnika a informatika, strukturovaný, Bakalářský}
+ \newcommand\StudProgram{Otevřená informatika, strukturovaný, Navazující magisterský}
+% \newcommand\StudProgram{Softwarové technologie a management, Bakalářský}
+% English study:
+% \newcommand\StudProgram{Electrical Engineering and Information Technology}  % bachelor programe
+% \newcommand\StudProgram{Electrical Engineering and Information Technology}  %master program
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% nabidky jsou z: http://www.fel.cvut.cz/cz/education/bk/prehled.html
+
+%\newcommand\StudBranch{Výpočetní technika}   % pro program EaI bak. (dobihajici i strukt.)
+\newcommand\StudBranch{Počítačová grafika a interakce}   % pro program OI mag. (strukt.)
+%\newcommand\StudBranch{Softwarové inženýrství}            %pro STM
+%\newcommand\StudBranch{Web a multimedia}                  % pro STM
+%\newcommand\StudBranch{Computer Engineering}              % bachelor programe
+%\newcommand\StudBranch{Computer Science and Engineering}  % master programe
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Vyplnte nazev prace, autora a vedouciho
+% Set up Work Title, Author and Supervisor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\WorkTitle{Realistické zobrazování modelů vegetace v reálném čase}
+\newcommand\FirstandFamilyName{Bc. Adam Kučera}
+\newcommand\Supervisor{Ing. Jiří Bittner, PhD.}
+
+
+\newcommand{\lineCodeNB}[1]{\hfil\penalty 100 \hfilneg \hbox{\texttt{#1}}}
+\newcommand{\lineCode}[1]{\mbox{\texttt{#1}}}
+
+% Pouzijete-li pdflatex, tak je prijemne, kdyz bude mit vase prace
+% funkcni odkazy i v pdf formatu
+\usepackage[
+pdftitle={\WorkTitle},
+pdfauthor={\FirstandFamilyName},
+bookmarks=true,
+colorlinks=true,
+breaklinks=true,
+urlcolor=black,
+citecolor= black,
+linkcolor= black,
+unicode=true,
+]
+{hyperref}
+
+
+
+% Extension posted by Petr Dlouhy in order for better sources reference (\cite{} command) especially in Czech.
+% April 2010
+% See comment over \thebibliography command for details.
+
+\usepackage[square, numbers]{natbib}             % sazba pouzite literatury
+%\usepackage{url}
+%\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>}\urlstyle{tt}}  %rm/sf/tt
+%\renewcommand{\emph}[1]{\textsl{#1}}    % melo by byt kurziva nebo sklonene,
+\let\oldUrl\url
+\renewcommand\url[1]{<\texttt{\oldUrl{#1}}>}
+
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{czech}
+%\selectlanguage{english} 
+
+% prikaz \typeout vypise vyse uvedena nastaveni v prikazovem okne
+% pro pohodlne ladeni prace
+
+
+\iflanguage{czech}{
+	 \typeout{************************************************}
+	 \typeout{Zvoleny jazyk: cestina}
+	 \typeout{Typ prace: \TypeOfWork}
+	 \typeout{Studijni program: \StudProgram}
+	 \typeout{Obor: \StudBranch}
+	 \typeout{Jmeno: \FirstandFamilyName}
+	 \typeout{Nazev prace: \WorkTitle}
+	 \typeout{Vedouci prace: \Supervisor}
+	 \typeout{***************************************************}
+	 \newcommand\Department{Katedra počítačů}
+	 \newcommand\Faculty{Fakulta elektrotechnická}
+	 \newcommand\University{České vysoké učení technické v Praze}
+	 \newcommand\labelSupervisor{Vedoucí práce}
+	 \newcommand\labelStudProgram{Studijní program}
+	 \newcommand\labelStudBranch{Obor}
+}{
+	 \typeout{************************************************}
+	 \typeout{Language: english}
+	 \typeout{Type of Work: \TypeOfWork}
+	 \typeout{Study Program: \StudProgram}
+	 \typeout{Study Branch: \StudBranch}
+	 \typeout{Author: \FirstandFamilyName}
+	 \typeout{Title: \WorkTitle}
+	 \typeout{Supervisor: \Supervisor}
+	 \typeout{***************************************************}
+	 \newcommand\Department{Department of Computer Science and Engineering}
+	 \newcommand\Faculty{Faculty of Electrical Engineering}
+	 \newcommand\University{Czech Technical University in Prague}
+	 \newcommand\labelSupervisor{Supervisor}
+	 \newcommand\labelStudProgram{Study Programme} 
+	 \newcommand\labelStudBranch{Field of Study}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    Poznamky ke kompletaci prace
+% Nasledujici pasaz uzavrenou v {} ve sve praci samozrejme 
+% zakomentujte nebo odstrante. 
+% Ve vysledne svazane praci bude nahrazena skutecnym 
+% oficialnim zadanim vasi prace.
+{
+\pagenumbering{roman} \cleardoublepage \thispagestyle{empty}
+\chapter*{Na tomto místě bude oficiální zadání práce}
+\begin{comment}
+	\begin{itemize}
+		\item čeština funguje? ňďťěščřžýáíéúů ŇĎŤĚŠČŘŽÝÁÍÉÚŮ,
+		\item musíte si ho vyzvednout na studiijním oddělení Katedry počítačů na Karlově náměstí,
+		\item v jedné odevzdané práci bude originál tohoto zadání (originál zůstává po obhajobě na katedře),
+		\item ve druhé bude na stejném místě neověřená kopie tohoto dokumentu (tato se vám vrátí po obhajobě).
+	\end{itemize}
+\end{comment}
+\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    Titulni stranka / Title page 
+
+\coverpagestarts
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%    Podekovani / Acknowledgements 
+
+\acknowledgements
+\noindent
+Velice rád bych touto cestou poděkoval vedoucímu práce Ing. Jiřímu Bittnerovi, PhD. za podnětné vedení práce a možnost účastnit se odborné studentské stáže na Technische Universität Wien, kde vznikaly metody animace stromů reprezentovaných plochými obrázky. Rovněž jemu a doc. Ing. Vlastimilu Havranovi, Ph.D. patří dík za možnost testovat aplikaci na výkonné školní sestavě.
+\newline
+I would also like to express my thanks to Mr. Ralf Habel for inspiring consultations and providing advanced leaf texture data.
+\newline 
+Chtěl bych také poděkovat svým rodičům za to, že mi byli vždy oporou a poskytli mi vynikající zázemí. 
+\newline 
+V neposlední řadě musím ocenit i své kamarády, kteří měli trpělivost, když na ně nezbývalo tolik času, a nepřestali mi nabízet radost z přátelství.
+
+Děkuji.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%   Prohlaseni / Declaration 
+
+\declaration{V~Liberci dne \today}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Abstract 
+ 
+\abstractpage
+
+Translation of Czech abstract into English.
+
+% Prace v cestine musi krome abstraktu v anglictine obsahovat i
+% abstrakt v cestine.
+\vglue60mm
+
+\noindent{\Huge \textbf{Abstrakt}}
+\vskip 2.75\baselineskip
+
+\noindent
+Abstrakt v češtině
+
+\noindent
+Očekávají se cca 1 -- 2 odstavce, maximálně půl stránky.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Obsah / Table of Contents 
+
+\tableofcontents
+
+
+%**************************************************************
+
+\mainbodystarts
+% horizontalní mezera mezi dvema odstavci
+%\parskip=5pt
+%11.12.2008 parskip + tolerance
+\normalfont
+\parskip=0.2\baselineskip plus 0.2\baselineskip minus 0.1\baselineskip
+
+% Odsazeni prvniho radku odstavce resi class book (neaplikuje se na prvni 
+% odstavce kapitol, sekci, podsekci atd.) Viz usepackage{indentfirst}.
+% Chcete-li selektivne zamezit odsazeni 1. radku nektereho odstavce,
+% pouzijte prikaz \noindent.
+
+%**************************************************************
+
+% Pro snadnejsi praci s vetsimi texty je rozumne tyto rozdelit
+% do samostatnych souboru nejlepe dle kapitol a tyto potom vkladat
+% pomoci prikazu \include{jmeno_souboru.tex} nebo \include{jmeno_souboru}.
+% Napr.:
+% \include{1_uvod}
+% \include{2_teorie}
+% atd...
+
+%*ÚVOD****************************************************************************
+\include{chapters/01_uvod}
+
+%*Popis problému, specifikace cíle****************************************************************************
+\include{chapters/02_problem_cile}
+
+%*Analýza a návrh řešení****************************************************************************
+\include{chapters/03_analyza_navrh}
+%Analýza a návrh implementace (včetně diskuse různých alternativ a volby implementačního prostředí).
+
+%*****************************************************************************
+\include{chapters/04_realizace}
+
+%*****************************************************************************
+\include{chapters/05_testovani}
+
+%*****************************************************************************
+\include{chapters/06_zaver}
+
+%*****************************************************************************
+% Seznam literatury je v samostatnem souboru reference.bib. 
+
+\bibliographystyle{csplainnat}
+
+%bibliographystyle{plain}
+%\bibliographystyle{psc}
+{
+%JZ: 11.12.2008 Kdo chce mit v techto ukazkovych odkazech take odkaz na CSTeX:
+\def\CS{$\cal C\kern-0.1667em\lower.5ex\hbox{$\cal S$}\kern-0.075em $}
+\bibliography{reference}
+ }
+
+% M. Dušek radi:
+%\bibliographystyle{alpha}
+% kdy citace ma tvar [AutorRok] (napriklad [Cook97]). Sice to asi neni  podle ceske normy (BTW BibTeX stejne neodpovida ceske norme), ale je to nejprehlednejsi.
+% 3.5.2009 JZ polemizuje: BibTeX neobvinujte, napiste a poskytnete nam styl (.bst) splnujici citacni normu CSN/ISO.
+
+%*****************************************************************************
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Seznam obrazku / List of Figures 
+
+\listoffigures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Seznam tabulek / List of Tables
+
+\listoftables
+
+
+
+%*****************************************************************************
+\appendix
+
+%*****************************************************************************
+\chapter{Seznam použitých zkratek}
+
+\begin{description}
+\item[2D] 		Two-Dimensional
+\item[3D] 		Three-Dimensional
+\item[BRDF] 	Bidirectional Reflectance Distribution Function
+\item[BSSRDF] 	Bidirectional Surface Scattering Reflectance Distribution Function
+\item[BVH]		Bounding Volume Hierarchy
+\item[CPU] 		Central Processing Unit
+\item[FBO]		Frame Buffer Object
+\item[fps] 		Frames Per Second
+\item[GPU] 		Graphics Processing Unit
+\item[kD-tree]	k-Dimensional tree
+\item[LOD]		Level Of Detail
+\item[OpenGL] 	Open Graphic Library
+
+\end{description}
+
+%*****************************************************************************
+%\chapter{UML diagramy}
+%\textbf{\large Tato příloha není povinná a zřejmě se neobjeví v každé práci. Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
+
+%*****************************************************************************
+\chapter{Instalační a uživatelská příručka}
+\textbf{\large Tato příloha velmi žádoucí zejména u softwarových implementačních prací.}
+
+%*****************************************************************************
+\chapter{Obsah přiloženého DVD}
+
+\dirtree{%
+.1 DVD. 
+.2 BIN\DTcomment{binární soubor pro platformu Windows, příslušná data a knihovny}. 
+.2 IMAGES\DTcomment{screenshoty z aplikace}. 
+.2 SRC\DTcomment{zdrojové kódy aplikace, příslušná data a knihovny}. 
+.2 TEXT\DTcomment{co vlastne ten adresar obsahuje}.  
+.3 PDF\DTcomment{text diplomové práce ve formátu PDF, optimalizovaný pro různé rozlišení}.  
+.3 TEX\DTcomment{zdrojové soubory a data pro sazbu textu systémem \LaTeX}.  
+.2 TOOLS\DTcomment{nástroje spojené s aplikací}. 
+.2 VIDEO\DTcomment{videa}. 
+.3 CAPTURED\DTcomment{zaznamenaný generovaný obraz aplikace}. 
+.3 REFERENCE\DTcomment{referenční videa reálných stromů}. 
+}
+%\begin{figure}[h]
+%\begin{center}
+%\includegraphics[width=14cm]{figures/seznamcd}
+%\caption{Seznam přiloženého CD --- příklad}
+%\label{fig:seznamcd}
+%\end{center}
+%\end{figure}
+
+\end{document}

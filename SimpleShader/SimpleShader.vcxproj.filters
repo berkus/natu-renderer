@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{90434bbe-2fb7-41ee-aff5-697db16c012a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{3cd07023-7aa7-4f29-9262-fd237fd64dda}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{63e56272-acef-4ee9-b3b3-7e5a6c8942a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4f3f37f5-9970-4d33-beb7-81f0908bb507}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{1299503f-ff05-485c-bad9-bb426b0ffd38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\GLEE">
+      <UniqueIdentifier>{6d7e22e5-a4ec-4d85-b5ca-64841cbbbfb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\GLUT">
+      <UniqueIdentifier>{d6723625-8ac2-4f39-aeff-361b491ce178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\LODEpng">
+      <UniqueIdentifier>{859ffea1-84bf-4cae-80d1-c66793746507}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IOfiles">
+      <UniqueIdentifier>{d70e255e-4fce-49c6-891a-afdec88dbc93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataContainers">
+      <UniqueIdentifier>{ab7c86c3-e082-43c0-bc22-d8f89e709c6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="branch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coordSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="png.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TestObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_utils\shaders.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_utils\utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\_utils\GLEE\GLee.c">
+      <Filter>Utils\GLEE</Filter>
+    </ClCompile>
+    <ClCompile Include="LODEpng\lodepng.cpp">
+      <Filter>Utils\LODEpng</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeBranch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeLeaf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IOfile.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>DataContainers</Filter>
+    </ClCompile>
+    <ClCompile Include="VBOfile.cpp">
+      <Filter>IOfiles</Filter>
+    </ClCompile>
+    <ClCompile Include="OBJTfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="branch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="coordSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="png.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\Matrix3x3.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\Matrix4x4.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\shaders.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\Vector3.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\Vector4.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\GLEE\GLee.h">
+      <Filter>Utils\GLEE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\_utils\GLUT\glut.h">
+      <Filter>Utils\GLUT</Filter>
+    </ClInclude>
+    <ClInclude Include="LODEpng\lodepng.h">
+      <Filter>Utils\LODEpng</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeBranch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeLeaf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IOfile.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>DataContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="VBOfile.h">
+      <Filter>IOfiles</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJTfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\branch_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\branch_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\hvd_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\hvd_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\leaf_fs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\leaf_vs.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\branch_vs_habel.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\branch_vs2.glsl">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

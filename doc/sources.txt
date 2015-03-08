@@ -1,0 +1,24 @@
+GILET - Point-based rendering of trees
+@inproceedings{GMN05,
+author = {Guillaume Gilet and Alexandre Meyer and Fabrice Neyret},
+title = {Point-based rendering of trees},
+booktitle = {Eurographics Workshop on Natural Phenomena 2000, August, 2005},
+editor = {\'Eric Galin and Pierre Poulin},
+organization = {ACM/SIGGRAPH},
+address = {Dublin, Irlande},
+publisher = {A.K. Peters},
+pages = {67--72},
+month = aou,
+year = 2005
+}
+
+Decaudin - Rendering Forest Scenes in Real-Time
+@inproceedings{Decaudin:2004:RFS,
+  title     = "Rendering Forest Scenes in Real-Time",
+  author    = "Philippe Decaudin and Fabrice Neyret",
+  booktitle = "Rendering Techniques '04 (Eurographics Symposium on Rendering)",
+  year      = "2004",
+  month     = "June",
+  pages     = "93--102",
+  url       = "www.antisphere.com/Research/DN04.php"
+}

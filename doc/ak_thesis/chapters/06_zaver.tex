@@ -1,0 +1,52 @@
+\chapter{Závěr}
+\label{chap:zaver}
+%%%%%%%%%%%%%%%
+% Diskutovat splneni zadani:
+\begin{comment}
+Prostudujte existující metody pro realistické zobrazování modelů vegetace v reálném čase a simulaci vybraných jevů jako je pohyb vegetace vlivem větru a změny vegetace v rámci různých ročních období. Na základě nastudovaných metod navrhněte a implementujte software umožňující realistické zobrazování vegetace v reálném čase s podporou zobrazování rozsáhlejších vegetačních celků. Výslednou implementaci otestujte z hlediska efektivity pro různé úrovně realističnosti simulace a zobrazování.
+\end{comment}
+
+V rámci této práce byly v sekci~\ref{sec:solutions}(~\nameref{sec:solutions}) zmíněny různé metody zobrazování vegetace - zejména stromů. Následně byl problém zobrazování pohybujících se stromů analyzován na teoretické úrovni. Byl odvozen model ohybu větví a listů působením větru, který lze uplatnit při zobrazování na GPU. Rovněž byla rozebrána problematika zobrazování listů včetně pokročilého modelu, který bere v úvahu i průsvitnost. Na základě prostudovaných metod zobrazování stromů byl navržen diskrétní systém LOD se 3 úrovněmi. Zatímco nejpodrobnější úroveň (LOD0) je vykreslována pomocí detailní geometrie, další dvě úrovně jsou zobrazovány jako trs plochých textur (řezů). {\bf Hlavní přínos této práce je však představení nové metody zpětné transformace, díky níž je možné simulovat pohyb vegetace na úrovni jednotlivých větví v rámci jednotlivých řezů.} Tato metoda je koherentní s animací trojrozměrné geometrie a pracuje zcela na GPU a umožňuje tak vykreslovat rozsáhlejší vegetační celky v reálném čase. Rovněž je navržen postup, kterým lze jednoduše reflektovat sezónní změny vegetace.
+
+Navržené metody byly implementovány a byla vytvořena interaktivní aplikace. Následně byla tato aplikace otestována z hlediska efektivity zobrazování jednotlivých úrovní LOD i z hlediska kvality zobrazení a různých úrovní realističnosti simulace. Na základě výsledků testování lze konstatovat, že se povedlo splnit cíle vytyčené na počátku této práce.
+
+Následující část navrhuje možné směry a způsoby vylepšení. 
+
+\section{Možnosti vylepšení a dalšího rozvoje}
+Problematika realistického zobrazování vegetace v real-time je velice obsáhlé téma a jeho kompletní pokrytí mnohonásobnohonásobně přesahuje rozsah této práce. Se vší skromností je třeba přiznat, že tato práce se do zmíněné problematiky vydává pouze na jakousi rychlou a letmou exkurzi. Stejně tak je třeba konstatovat, že je v této sféře stále velké množství neprozkoumaných a velmi zajímavých oblastí. Namátkou lze zmínit věrný a zároveň obecný deformační a destrukční model stromů pracující v reálném čase. 
+
+{\bf Uložení předzpracovaných dat}: 
+V rámci zrychlení fáze inicializace aplikace, kdy jsou vstupní soubory zpracovávány, by bylo možné tato předzpracovaná uložit a poté načítat už rovnou pouze potřebný a zpracovaný soubor informací. Zároveň by bylo možné případně do některých dat zasáhnout a tvůrčím způsobem je ovlivnit (nabízí se to u textury expandovaných dat pro jednotlivé řezy). Mohlo by se tím dosáhnout kvalitativně lepších výsledků.
+
+{\bf  Svázání parametrů animace}: 
+Aplikace umožňuje měnit parametry animace pro každou úroveň větví v hierarchii zvlášť. Nezávisle lze ovlivňovat i pohyb listů. Tyto parametry ale simulují větrné podmínky a jsou tedy jakýmsi způsobem svázané. Lze si například představit, že by byly sofistikovaně nastavovány na základě jediného parametru, kterým by byla síla (rychlost) větru. Hodnoty amplitudy a frekvence pro danou úroveň větví se nemění rozhodně lineárně. Ze zkušenosti víme, že při sílícím slabém větru se zvyšuje amplituda i frekvence kývání. Avšak pro enormně silný vítr se strom víceméně ustálí v rovnovážné poloze amplituda výkyvů je velmi malá, zatímco frekvence může být vysoká. Nalezení vhodných průběhů těchto paramatrů pro sílící vítr by mohlo pomoci zlepšit výrazně kvalitu animace.
+
+{\bf  Preciznější frustum culling}: 
+Současná aplikace řeší otázku frustum cullingu velmi primitivním způsobem. Vyřazuje všechny instance LOD1 a LOD2, které jsou za rovinou pohledu. Všechny další operace využívající frustum culling probíhají pouze v rámci standardního zpracování na GPU. Bylo by jistě možné aplikovat pokročilou metodu, která by ušetřila zpracování instancí, které ve výsledku stejně nejsou vidět. Lze předpokládat, že své využití by nalezly i Occlusion Queries.
+
+{\bf  Efektivnější řízení LOD}: 
+Zatímco popsaná metoda řídí LOD jednotlivě pro každou instanci, zajímavé by molhy být metody řízení LOD po skupinách. Lze předpokládat použití akceleračních struktur jako je kD-tree, či BVH. Otevřenou otázkou je v takovém případě řazení kvůli průhlednosti.
+
+{\bf  Optimalizace počtu vykreslovaných fragmentů LOD}: 
+Nyní se díky back-to-front řazení neuplatňuje žádná optimalizace díky z-testům. Všechny fragmenty jsou vykreslovány, ačkoliv velká část není stejně vidět. Tento postup jde totiž bohužel přímo proti efektivnímu využití z-bufferu. Ideální by byl postup v přesně opačném pořadí s tím, že pokud již na daném místě nemůže fragment přispět svou barvou kvůli neprůhlednosti fragmentů bližších, tak by bylo zpracování ukončeno. Jelikož je efektivita LOD1 a LOD2 kriticky závislá na počtu vykreslovaných fragmentů, byla by tato optimalizace velmi vítanou a projevila by se ve výrazném zvýšení efektivity vykreslování.
+
+{\bf Jiná forma LOD}: 
+Není zcela bez perspektivy zabývat se i myšlenkou využití jiné formy LOD než je trs řezů popsaný v této práci. Zajímavé výsledky by mohlo přinést aplikování metody zpětné transformace na billboard-clouds (billboardové mraky) resp. na low-poly modely, případně na jiný způsob zobrazení ve snížené úrovni detailu.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Visual quality improvements...
+%
+{\bf Stíny}: 
+Zejména přechod mezi stíny dvou úrovní by bylo možné ošetřit sofistikovanějším způsobem. Zatímco představený přístup řeší tento problém pomocí ditheringu, lze si představit i řešení na základě multisamplingu stínové mapy. Další alternativou jsou stochastické přístupy.
+
+{\bf Zvýšení detailnosti LOD0}: 
+Výsledná aplikace abstrahuje z modelu vlastně pouze topologii a větve jsou nahrazeny relativně primitivní geometrií. V zásadě nic nebrání tomu upravit aplikaci tak, aby pracovala s obecnými (i velmi detailními) modely se známou topologií. Ohybová metoda však předpokládá větve, které jsou v základní poloze přímé. Problémy by však mohly tvořit větve zahnuté, či jinak pokroucené, neboť by mohlo docházet k viditelnému natahování či naopak zkracování. Tento problém si proto vyžaduje další studium. Podobně by bylo možné využít technik bump-mappingu či parallax-mappingu pro přidání detailnosti kmene a větví. Další možností je tzv. \emph{Silhouette Clipping}, který obohacuje siluetu kmene a větví o případné detaily.
+
+{\bf Order-independent průhlednost}: 
+Průhlednost nyní způsobuje mnoho komplikací s řazením instancí i primitiv, zejména by bylo výhodné zpracování průhlednosti optimalizovat vzhledem k z-testům. Řešení průhlednosti ovlivňuje v aplikaci celou architekturu LOD systému. Toto zpracování by mohlo být ušetřeno.
+
+{\bf Ambient occlusion}: 
+Jak se ukazuje, ambient occlusion (zastínění světelných příspěvků prostředí) může podstatným způsobem zlepšit vizuální dojem. Přesné a korektní ambient occlusion je v reálném čase velmi obtížné řešit. Zejména jde o efekt, kdy listy uvnitř koruny stromu se jeví tmavší, než listy poblíž okraje koruny. Řešením by mohlo být předzpracování a určení příslušného koeficientu pro každý list. 
+
+{\bf Barevné stínové mapy}: 
+Reálné stíny přebírají barvu listů, jimiž světlo prošlo. V aplikaci jsou brány v úvahu sice průsvitné listy, ovšem stíny jsou vlastně monochromatické a tuto průsvitnost vůbec nereflektují. Na základě článku \cite{McGuire11CSSM} by bylo možné implementovat techniku, která by brala v potaz právě průsvitnost listů a ovlivňovala by tak barvu stínů.  
